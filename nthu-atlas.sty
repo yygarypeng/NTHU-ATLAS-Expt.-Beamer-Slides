@@ -25,6 +25,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{listings}
 \RequirePackage{transparent} % need to implement with pdflatex!
+\RequirePackage{appendixnumberbeamer}
 
 % ============================================================================
 % Color Accents
@@ -34,6 +35,7 @@
 \definecolor{nthupurple2}{HTML}{660C6A}
 \definecolor{nthugrey}{HTML}{B5B5B6}
 \definecolor{ATLASblue}{HTML}{0b80c3}
+\definecolor{CERNblue}{HTML}{0033A0}
 
 \setbeamercolor{title}{fg=white}
 \setbeamercolor{author}{fg=white}
@@ -53,7 +55,7 @@
     linkcolor=nthupurple,
     anchorcolor=red,
     citecolor=blue!80,
-    urlcolor=ATLASblue,
+    urlcolor=CERNblue,
 }
 
 %\setbeamercolor{block title}{fg=airforceblue,bg=morelightgray}
@@ -65,7 +67,7 @@
 
 \setbeamerfont{author}{size=\small}
 \setbeamerfont{date}{size=\footnotesize}
-\setbeamerfont{title}{series=\bfseries, size=\huge}
+\setbeamerfont{title}{series=\bfseries, size=\Large}
 \setbeamerfont{subtitle}{series=\mdseries,size=\normalsize}
 
 \setbeamerfont{frametitle}{series=\bfseries}
@@ -92,7 +94,7 @@
 \setbeamertemplate{itemize subsubitem}{\ensuremath{\circ}}
 
 % paragraph spacing
-\setlength{\parskip}{10pt}
+\setlength{\parskip}{7pt}
 
 % code environment
 \lstdefinestyle{mystyle}{
@@ -111,8 +113,8 @@
     showstringspaces=false,
     showtabs=false,
     tabsize=4,
-    xleftmargin=10pt,
-    xrightmargin=10pt,
+    xleftmargin=7pt,
+    xrightmargin=7pt,
 }
 \lstset{style=mystyle}
 
@@ -123,7 +125,7 @@
 % headline for all frames
 \setbeamertemplate{headline}{
 	\ifnum\theframenumber=1
-		% not display the headline for the title page
+		% do not display the headline for the title page
 	\else
 		\begin{beamercolorbox}[wd=\paperwidth,ht=40pt]{head}
 			\hspace{405pt}\includegraphics[width=21pt]{source/atlas-white.png}
@@ -155,10 +157,10 @@
         \put(175,-135){\includegraphics[width=135pt]{source/tagline.png}}
         \put(105,-143){\includegraphics[width=60pt]{source/cern-logo.png}}
         \put(0,25){
-            \begin{minipage}{300pt}
+            \begin{minipage}{350pt}
                 \vspace{24pt}
                 \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
-                \vspace{10pt}
+                \vspace{6pt}
                 \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle
             \end{minipage}
         }
@@ -180,6 +182,7 @@
 
 % define foot line
 \defbeamertemplate{footline}{progress bar with page number}{
+    % Design the progress bar.
     \dimen0=\paperwidth
     \multiply\dimen0 by \insertframenumber
     \divide\dimen0 by \inserttotalframenumber
@@ -201,18 +204,22 @@
 \newcommand{\backup}{
     \begingroup
         \setbeamertemplate{headline}{}
-        \begin{picture}(0,0)
-            \put(-5,-185){
-                \begin{beamercolorbox}[wd=1.1\paperwidth,ht=140pt]{jumbo}
-                    \put(90,63){
-                        \Huge{\textbf{\color{white}{Backup}}}
-                    }
-                \end{beamercolorbox}
-            }
-            \put(280,-143){
-                \transparent{0.3}\includegraphics[width=110pt]{source/nthu-trans.png}
-            } 
-	\end{picture}
+        \setbeamertemplate{footline}{}
+        \appendix
+        \begin{frame}
+            \begin{picture}(0,0)
+                \put(-5,-86){
+                    \begin{beamercolorbox}[wd=1.1\paperwidth,ht=140pt]{jumbo}
+                        \put(90,63){
+                            \Huge{\textbf{\color{white}{Backup}}}
+                        }
+                    \end{beamercolorbox}
+                }
+                \put(275,-45){
+                    \transparent{0.3}\includegraphics[width=110pt]{source/nthu-trans.png}
+                } 
+    	   \end{picture}
+        \end{frame}
     \endgroup
 }
 
@@ -221,13 +228,13 @@
     \begingroup
         % wipe out both header and footer.
         \setbeamertemplate{headline}{}
-	\setbeamertemplate{footline}{}
-	\begin{frame}[c]{}
-            \hfill
-            \begin{center}
-                {\includegraphics[width=0.6\paperwidth]{source/last-frame.png}}
-            \end{center}
-	\end{frame}
+        \setbeamertemplate{footline}{}
+            \begin{frame}[c]{}
+              \hfill
+                \begin{center}
+                    {\includegraphics[width=0.6\paperwidth]{source/last-frame.png}}
+                \end{center}
+           \end{frame}
     \endgroup
 }
 
@@ -247,7 +254,7 @@
                     \transparent{0.1}\includegraphics[width=230pt]{source/nthu-logo.png}
                 }
             \end{picture}
-            \tableofcontents[currentsection]
+            \large{\tableofcontents[currentsection]}
         \end{frame}
     \endgroup
 }
