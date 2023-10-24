@@ -6,6 +6,6 @@ This template of beamer is for the (weekly) meeting in NTHU Expt. HEP Group. Bef
 
 If you have any questions, comments, or suggestions, feel free to contact me at yygarypeng@gapp.nthu.edu.tw.
 
-You can check the original template in PolyU in [Overleaf Template](https://www.overleaf.com/latex/templates/polyu-beamer-slides/pyhhgmgmvzhg).
+You can check the original template created by PolyU in [the Overleaf Template](https://www.overleaf.com/latex/templates/polyu-beamer-slides/pyhhgmgmvzhg).
 
 > This template needs to use _**pdflatex**_!
