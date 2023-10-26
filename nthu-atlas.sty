@@ -26,6 +26,7 @@
 \RequirePackage{listings}
 \RequirePackage{transparent} % need to implement with pdflatex!
 \RequirePackage{appendixnumberbeamer}
+\RequirePackage{svg}
 
 % ============================================================================
 % Color Accents
@@ -128,7 +129,7 @@
 		% do not display the headline for the title page
 	\else
 		\begin{beamercolorbox}[wd=\paperwidth,ht=40pt]{head}
-			\hspace{405pt}\includegraphics[width=21pt]{source/atlas-white.png}
+			\hspace{405pt}\includesvg[width=21pt]{source/atlas-white.svg}
 		\end{beamercolorbox}
 	\fi
 }
@@ -148,14 +149,14 @@
 % title page
 \setbeamertemplate{title page}{
     \begin{picture}(0,0)
-        \put(-18,73){\includegraphics[width=120pt]{source/nthu-name.png}}
+        \put(-18,73){\includesvg[width=120pt]{source/nthu_full_logo.svg}}
         \put(-5,-75){
             \begin{beamercolorbox}[wd=1.1\paperwidth,ht=140pt]{jumbo}
             \end{beamercolorbox}
         }
         \put(300,-33){\transparent{0.3}\includegraphics[width=110pt]{source/nthu-trans.png}}
-        \put(180,-132){\includegraphics[width=135pt]{source/atlas-name.png}}
-        \put(110,-139){\includegraphics[width=60pt]{source/cern-logo.png}}
+        \put(180,-132){\includesvg[width=135pt]{source/ATLAS_full_logo.svg}}
+        \put(110,-139){\includesvg[width=60pt]{source/cern-logo.svg}}
         \put(0,25){
             \begin{minipage}{350pt}
                 \vspace{24pt}
@@ -232,7 +233,7 @@
             \begin{frame}[c]{}
               \hfill
                 \begin{center}
-                    {\includegraphics[width=0.6\paperwidth]{source/last-frame.png}}
+                    {\includesvg[width=0.6\paperwidth]{source/nthu_motto.svg}}
                 \end{center}
            \end{frame}
     \endgroup
