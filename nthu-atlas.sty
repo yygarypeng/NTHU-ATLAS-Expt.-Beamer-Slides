@@ -128,8 +128,8 @@
 	\ifnum\theframenumber=1
 		% do not display the headline for the title page
 	\else
-		\begin{beamercolorbox}[wd=\paperwidth,ht=40pt]{head}
-			\hspace{405pt}\includesvg[width=21pt]{source/atlas-white.svg}
+		\begin{beamercolorbox}[wd=\paperwidth,ht=43pt]{head}
+			\hspace{330pt}\includesvg[width=20pt]{source/atlas-white.svg}
 		\end{beamercolorbox}
 	\fi
 }
@@ -149,26 +149,26 @@
 % title page
 \setbeamertemplate{title page}{
     \begin{picture}(0,0)
-        \put(-18,73){\includesvg[width=120pt]{source/nthu_full_logo.svg}}
-        \put(-5,-75){
+        \put(-5,67){\includesvg[width=160pt]{source/nthu_full_logo.svg}}
+        \put(-5,-85){
             \begin{beamercolorbox}[wd=1.1\paperwidth,ht=140pt]{jumbo}
             \end{beamercolorbox}
         }
-        \put(300,-33){\transparent{0.3}\includegraphics[width=110pt]{source/nthu-trans.png}}
-        \put(180,-132){\includesvg[width=135pt]{source/ATLAS_full_logo.svg}}
-        \put(110,-139){\includesvg[width=60pt]{source/cern-logo.svg}}
+        % \put(300,-33){\transparent{0.3}\includegraphics[width=110pt]{source/nthu-trans.png}}
+        \put(188,-141){\includesvg[width=135pt]{source/ATLAS_full_logo.svg}}
+        \put(118,-149){\includesvg[width=60pt]{source/cern-logo.svg}}
         \put(0,25){
             \begin{minipage}{350pt}
-                \vspace{24pt}
+                \vspace{42pt}
                 \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
                 \vspace{6pt}
                 \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle
             \end{minipage}
         }
-        \put(0,-45){
+        \put(0,-55){
             \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor
         }
-        \put(0,-60){
+        \put(0,-70){
             \usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate
         }
     \end{picture}
@@ -211,12 +211,12 @@
             \begin{picture}(0,0)
                 \put(-5,-86){
                     \begin{beamercolorbox}[wd=1.1\paperwidth,ht=140pt]{jumbo}
-                        \put(90,63){
+                        \put(67,63){
                             \Huge{\textbf{\color{white}{Backup}}}
                         }
                     \end{beamercolorbox}
                 }
-                \put(275,-45){
+                \put(180,-42){
                     \transparent{0.3}\includegraphics[width=110pt]{source/nthu-trans.png}
                 } 
     	   \end{picture}
@@ -230,11 +230,16 @@
         % wipe out both header and footer.
         \setbeamertemplate{headline}{}
         \setbeamertemplate{footline}{}
-            \begin{frame}[c]{}
+            \begin{frame}
               \hfill
                 \begin{center}
-                    {\includesvg[width=0.6\paperwidth]{source/nthu_motto.svg}}
+                    {\includesvg[width=0.65\paperwidth]{source/nthu_motto.svg}}
                 \end{center}
+                \begin{picture}(0,0)
+                    \put(236,-60){
+                        \includesvg[width=0.23\paperwidth]{source/cc.svg}
+                    }
+                \end{picture}
            \end{frame}
     \endgroup
 }
@@ -251,8 +256,8 @@
     \begingroup
         \begin{frame}{Contents}{}
             \begin{picture}(0,0)
-                \put(248,-220){
-                    \transparent{0.08}\includegraphics[width=230pt]{source/nthu-logo.png}
+                \put(193,-220){
+                    \transparent{0.07}\includegraphics[width=180pt]{source/nthu-logo.png}
                 }
             \end{picture}
             \large{\tableofcontents[currentsection]}
